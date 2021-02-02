@@ -70,7 +70,7 @@
             </div>
             <div class="links">
                 <a href="/monitor/er">ห้องฉุกเฉิน</a>
-                <a href="#">ผู้ป่วยนอก</a>
+                <a href="/monitor/opd">ผู้ป่วยนอก</a>
                 <a href="#">ห้องตรวจ 1</a>
                 <a href="#">ห้องตรวจ 2</a>
                 <a href="#">ห้องตรวจ 3</a>

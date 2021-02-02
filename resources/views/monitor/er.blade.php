@@ -7,11 +7,13 @@
         overflow-y: scroll;
         overflow: hidden;
     }
-    .tableFixHead thead th { position: sticky; top: 0; }
-    th { background:rgb(0, 0, 0); }
+    .tableFixHead thead th { 
+        position: sticky;
+        top: 0; 
+    }
     .blink-text {
-  animation: blinker 3s linear infinite;
-}
+        animation: blinker 3s linear infinite;
+    }
     @keyframes blinker {
     50% {
         opacity: 0;
@@ -26,7 +28,7 @@
             </h1>
             <div class="AutoScroll scroller tableFixHead" id="id-1" data-config='{"delay" : 5000 , "amount" : 100}'>
                 <table class="table table-striped table-dark" width="100%" style="font-size:30px;">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th class="text-center">HN</th>
                             <th>ผู้ป่วย</th>
