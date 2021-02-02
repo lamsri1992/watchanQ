@@ -71,12 +71,7 @@
             <div class="links">
                 <a href="/monitor/er">ห้องฉุกเฉิน</a>
                 <a href="/monitor/opd">ผู้ป่วยนอก</a>
-                <a href="#">ห้องตรวจ 1</a>
-                <a href="#">ห้องตรวจ 2</a>
-                <a href="#">ห้องตรวจ 3</a>
-                <a href="#">ทันตกรรม</a>
-                <a href="#">เภสัชกรรม</a>
-                <a href="#">คลินิค</a>
+                <a href="/caller/opd">เรียกคิวผู้ป่วยนอก</a>
             </div>
         </div>
     </div>

@@ -30,6 +30,7 @@
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 <script src="{{ asset('vendor/autoscroll/autoscroll.js') }}"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=ZiaVNNQm"></script>
 @section('script')
 @show
 </head>

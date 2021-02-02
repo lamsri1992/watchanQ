@@ -88,7 +88,7 @@
 @php
     $data = count($result)+count($opd); $data_refresh = ($data * 2) * 1000;
     if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refresh; }
-    echo $data_settime;
+    // echo $data_settime;
 @endphp
 
 @endsection
