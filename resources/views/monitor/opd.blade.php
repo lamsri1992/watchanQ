@@ -72,7 +72,7 @@
                         </table>
                     </div>
                     <br>
-                    <div class="AutoScroll scroller tableFixHead" id="id-1" data-config='{"delay" : 5000 , "amount" : 100}'>
+                    <div class="AutoScroll scroller tableFixHead" id="id-2" data-config='{"delay" : 5000 , "amount" : 100}'>
                         <table class="table table-striped table-light" style="font-size:30px;">
                             <thead class="thead-light">
                                 <tr>
