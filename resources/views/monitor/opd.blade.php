@@ -60,9 +60,9 @@
                                 @endphp
                                 <tr>
                                     <td width="20%">
-                                        <span style="font-weight: bold;">{{ "HN ".$hn }}</span>
+                                        <span style="font-weight: bold;">{{ "HN".$hn }}</span>
                                     </td>
-                                    <td><i class="far fa-user"></i> 
+                                    <td><i class="far fa-address-card"></i> 
                                         {{ $res->patient_firstname }} {{ substr($res->patient_lastname,0,9)."*****" }}
                                     </td>
                                     <td><i class="far fa-clock"></i> {{ substr($res->assign_date_time,11,10) }}</td>
@@ -85,9 +85,9 @@
                                 @endphp
                                 <tr>
                                     <td width="20%">
-                                        <span style="font-weight: bold;">{{ "HN ".$hn }}</span>
+                                        <span style="font-weight: bold;">{{ "HN".$hn }}</span>
                                     </td>
-                                    <td><i class="far fa-user"></i> 
+                                    <td><i class="far fa-address-card"></i> 
                                         {{ $res->patient_firstname }} {{ substr($res->patient_lastname,0,9)."*****" }}
                                     </td>
                                     <td><i class="far fa-clock"></i> {{ substr($res->assign_date_time,11,10) }}</td>
