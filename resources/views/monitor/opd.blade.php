@@ -56,8 +56,7 @@
                             </thead>
                             <tbody style="font-size:30px;">
                                 @foreach($result as $res)
-                                @php $hn = (int)$res->visit_hn;
-                                @endphp
+                                @php $hn = (int)$res->visit_hn; @endphp
                                 <tr>
                                     <td width="20%">
                                         <span style="font-weight: bold;">{{ "HN".$hn }}</span>

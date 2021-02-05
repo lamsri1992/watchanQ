@@ -42,4 +42,17 @@ class monitorController extends Controller
                 ->get();
         return view('monitor.opd', ['result'=>$result,'opd'=>$opd]);
     }
+
+    public function pcu()
+    {
+        $result = DB::table('t_visit_queue_transfer')
+                ->leftJoin('t_visit', 't_visit.t_visit_id', '=', 't_visit_queue_transfer.t_visit_id')
+                ->leftJoin('b_service_point', 'b_service_point.b_service_point_id', '=', 't_visit_queue_transfer.b_service_point_id')
+                ->where('t_visit_queue_transfer.b_service_point_id', '=', '2403071862616')
+                ->where('t_visit_queue_transfer.f_visit_type_id', '=', '0')
+                ->where('t_visit_queue_transfer.visit_queue_map_queue', '<>', '0')
+                ->orderBy('t_visit_queue_transfer.assign_date_time', 'asc')
+                ->get();
+        return view('monitor.pcu', ['result'=>$result]);
+    }
 }

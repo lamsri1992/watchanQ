@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'monitor'], function () {
     Route::get('/er','monitorController@er')->name('monitor.er');
     Route::get('/opd','monitorController@opd')->name('monitor.opd');
+    Route::get('/pcu','monitorController@pcu')->name('monitor.pcu');
 });
 
 Route::group(['prefix' => 'caller'], function () {

@@ -71,6 +71,7 @@
             <div class="links">
                 <a href="/monitor/er">ห้องฉุกเฉิน</a>
                 <a href="/monitor/opd">ผู้ป่วยนอก</a>
+                <a href="/monitor/pcu">คลินิก PCU</a>
                 <a href="/caller/opd">เรียกคิวผู้ป่วยนอก</a>
             </div>
         </div>
