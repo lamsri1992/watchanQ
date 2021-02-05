@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .AutoScroll {
-        max-height: 300px;
+        max-height: 220px;
         overflow-y: scroll;
         overflow: hidden;
     }
