@@ -10,6 +10,7 @@
     .tableFixHead thead th {
         position: sticky;
         top: 0;
+        background-color: #343a40;
     }
     .blink-text {
         animation: blinker 3s linear infinite;
@@ -66,9 +67,10 @@
                             </tbody>
                         </table>
                     </div>
+                    <br>
                     <div class="AutoScroll scroller tableFixHead" id="id-1" data-config='{"delay" : 5000 , "amount" : 100}'>
                         <table class="table table-striped table-light" style="font-size:30px;">
-                            <thead class="">
+                            <thead class="thead-light">
                                 <tr>
                                     <th colspan="3" class="text-center"><i class="fa fa-clinic-medical"></i> หลังพบแพทย์</th>
                                 </tr>
