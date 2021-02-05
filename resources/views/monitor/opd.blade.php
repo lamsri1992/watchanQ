@@ -26,18 +26,25 @@
             <strong>ระบบแสดงคิวเข้ารับบริการผู้ป่วยนอก</strong>
         </h1>
         <div class="row">
-            <div class="col-md-7">
-                <div class="embed-responsive embed-responsive-4by3" style="height: 500px;">
-                    <iframe height="500" style="border-radius: 25px;"
-                        src="https://www.youtube.com/embed/videoseries?list=PLs5m0uHKO9RDBcGsCCcb4KAVcbbEij8xv"
-                        frameborder="0" allow="autoplay; encrypted-media">
-                    </iframe>
-                </div><hr>
-                <div class="text-center blink-text">
-                    <h1 class="badge badge-danger btn-block" style="font-size: 30px;">หากรอคอยนานเกินกว่า 20 นาที ให้ติดต่อพยาบาลที่เค้าท์เตอร์</h1>
+            <div class="col-md-5">
+                <div id="opdSlide" class="carousel slide" style="background-color: #343a40" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="10000">
+                            <img src="http://www.prdmh.com/images/Covid-19/%E0%B8%AD%E0%B8%94_%E0%B8%AE%E0%B8%94_%E0%B8%AA.jpg" width="75%">
+                        </div>
+                        <div class="carousel-item" data-interval="10000">
+                            <img src="http://www.prdmh.com/images/Covid-19/%E0%B9%80%E0%B8%8A%E0%B8%84%E0%B8%AD%E0%B8%A2%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3_%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B9%84%E0%B8%AB%E0%B8%99%E0%B8%88%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A5%E0%B8%AD%E0%B8%A1.jpg" width="75%">
+                        </div>
+                        <div class="carousel-item" data-interval="10000">
+                            <img src="http://www.prdmh.com/images/Covid-19/%E0%B8%A3%E0%B8%9E%E0%B8%88.%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B8%99_info_4_%E0%B8%A0%E0%B8%B2%E0%B8%84_%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%AD.jpg" width="75%">
+                        </div>
+                        <div class="carousel-item" data-interval="10000">
+                            <img src="http://www.prdmh.com/images/Covid-19/3%E0%B9%84%E0%B8%A13%E0%B8%95%E0%B8%AD%E0%B8%87_%E0%B9%82%E0%B8%84%E0%B8%A7%E0%B8%9419-01.jpg" width="75%">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-7">
                 <div id="liveQ">
                     <div class="AutoScroll scroller tableFixHead" id="id-1" data-config='{"delay" : 5000 , "amount" : 100}'>
                         <table class="table table-striped table-dark" style="font-size:30px;">
