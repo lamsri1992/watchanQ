@@ -59,9 +59,13 @@
                                 @php $hn = (int)$res->visit_hn;
                                 @endphp
                                 <tr>
-                                    <td class="text-center">{{ $hn }}</td>
-                                    <td>{{ $res->patient_firstname }} {{ substr($res->patient_lastname,0,15)."*****" }}</td>
-                                    <td class="text-center">{{ substr($res->assign_date_time,11,10) }}</td>
+                                    <td width="20%">
+                                        <span style="font-weight: bold;">{{ "HN ".$hn }}</span>
+                                    </td>
+                                    <td><i class="far fa-user"></i> 
+                                        {{ $res->patient_firstname }} {{ substr($res->patient_lastname,0,9)."*****" }}
+                                    </td>
+                                    <td><i class="far fa-clock"></i> {{ substr($res->assign_date_time,11,10) }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -80,9 +84,13 @@
                                 @php $hn = (int)$res->visit_hn;
                                 @endphp
                                 <tr>
-                                    <td class="text-center">{{ $hn }}</td>
-                                    <td>{{ $res->patient_firstname }} {{ substr($res->patient_lastname,0,15)."*****" }}</td>
-                                    <td class="text-center">{{ substr($res->assign_date_time,11,10) }}</td>
+                                    <td width="20%">
+                                        <span style="font-weight: bold;">{{ "HN ".$hn }}</span>
+                                    </td>
+                                    <td><i class="far fa-user"></i> 
+                                        {{ $res->patient_firstname }} {{ substr($res->patient_lastname,0,9)."*****" }}
+                                    </td>
+                                    <td><i class="far fa-clock"></i> {{ substr($res->assign_date_time,11,10) }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
