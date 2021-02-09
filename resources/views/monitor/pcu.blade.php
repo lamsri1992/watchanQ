@@ -56,7 +56,7 @@
                                     </td>
                                     <td>{{ substr($res->assign_date_time,11,10) }}</td>
                                     <td class="text-center">
-                                        @if ($res->visit_queue_transfer_lab_status == 0)
+                                        @if ($res->visit_queue_transfer_lab_status == 1)
                                             <span class="">
                                                 <i class="fa fa-flask text-success"></i> รอผล
                                             </span>
