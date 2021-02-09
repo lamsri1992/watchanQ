@@ -20,11 +20,6 @@
     }
 }
 </style>
-@php
-    $data = count($result); $data_refresh = ($data * 3) * 1000;
-    if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refresh; }
-    // echo $data_settime;
-@endphp
 <div class="row">
     <div class="col-md-12">
         <div class="card-body text-center" style="background-color:#17a2b8;border-radius: 25px;">
@@ -33,6 +28,11 @@
                 <span class="badge badge-pill badge-danger" style="font-size: 40px;">{{ $data }}</span> คิว
             </h1>
             <div id="liveQ">
+                @php
+                    $data = count($result); $data_refresh = ($data * 3) * 1000;
+                    if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refresh; }
+                    // echo $data_settime;
+                @endphp
                 <div class="AutoScroll scroller tableFixHead" id="id-1" data-config='{"delay" : 5000 , "amount" : 100}'>
                     <table class="table table-striped table-dark" width="100%" style="font-size:30px;">
                         <thead class="thead-dark">
