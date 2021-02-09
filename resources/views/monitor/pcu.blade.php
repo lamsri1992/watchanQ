@@ -28,7 +28,7 @@
         </h1>
         <div class="row">
             <div class="col-md-5">
-                <div class="embed-responsive embed-responsive-1by1">
+                <div class="embed-responsive embed-responsive-4by3">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list=PLs5m0uHKO9RDBcGsCCcb4KAVcbbEij8xv"
                         frameborder="0" allow="autoplay; encrypted-media">
                     </iframe>
@@ -43,22 +43,22 @@
                                     <th colspan="4" class="text-center"><i class="fa fa-clipboard-list"></i> คิวรอรับบริการ</th>
                                 </tr>
                             </thead>
-                            <tbody style="font-size:25px;">
+                            <tbody style="font-size:40px;">
                                 @foreach($result as $res)
                                 @php $hn = (int)$res->visit_hn;
                                 @endphp
                                 <tr>
                                     <td width="20%">
-                                        <span style="font-weight: bold;">{{ "HN".$hn }}</span>
+                                        <span style="font-weight: bold;">{{ $hn }}</span>
                                     </td>
-                                    <td><i class="far fa-address-card"></i> 
+                                    <td>
                                         {{ $res->patient_firstname }} {{ substr($res->patient_lastname,0,9)."*****" }}
                                     </td>
-                                    <td><i class="far fa-clock"></i> {{ substr($res->assign_date_time,11,10) }}</td>
+                                    <td>{{ substr($res->assign_date_time,11,10) }}</td>
                                     <td class="text-center">
-                                        @if ($res->visit_queue_transfer_lab_status == 1)
+                                        @if ($res->visit_queue_transfer_lab_status == 0)
                                             <span class="">
-                                                <i class="fa fa-flask text-success"></i> {{ "รอผลแลบ" }}
+                                                <i class="fa fa-flask text-success"></i> รอผล
                                             </span>
                                         @endif
                                     </td>
