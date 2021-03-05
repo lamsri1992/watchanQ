@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="embed-responsive embed-responsive-4by3">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list=PLs5m0uHKO9RDBcGsCCcb4KAVcbbEij8xv"
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list=PLTdZgbsMlsm3lMOB9XYxqhZUHTU4AjWkU"
                         frameborder="0" allow="autoplay; encrypted-media">
                     </iframe>
                 </div>
@@ -74,7 +74,7 @@
 </div>
 <div class="container-fluid" style="padding-top: 1%;">
     <marquee scrollamount="7" style="background-color:#dc3545;border-radius: 25px;">
-        <h1 class="text-white"><i class="fa fa-bullhorn blink-text"></i> คิวรอรับบริการ เรียงลำดับจากเวลาที่ส่งชื่อเข้าระบบ กรุณารอคิวตามลำดับ</h1>
+        <h1 class="text-white"><i class="fa fa-bullhorn"></i> คิวรอรับบริการ เรียงลำดับจากเวลาที่ส่งชื่อเข้าระบบ กรุณารอคิวตามลำดับ</h1>
     </marquee>
 </div>
 
