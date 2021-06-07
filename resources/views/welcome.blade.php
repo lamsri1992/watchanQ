@@ -73,6 +73,8 @@
                 <a href="/monitor/opd">ผู้ป่วยนอก</a>
                 <a href="/monitor/pcu">คลินิก PCU</a>
                 <a href="/caller/opd">เรียกคิวผู้ป่วยนอก</a>
+                <a href="/monitor/c19">คิวรับวัคซีน Covid-19</a>
+                <a href="/caller/c19">เรียกคิวรับวัคซีน Covid-19</a>
             </div>
         </div>
     </div>

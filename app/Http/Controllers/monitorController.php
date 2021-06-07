@@ -55,4 +55,16 @@ class monitorController extends Controller
                 ->get();
         return view('monitor.pcu', ['result'=>$result]);
     }
+
+    public function c19()
+    {
+        $result = DB::table('t_visit_queue_transfer')
+                ->leftJoin('t_visit', 't_visit.t_visit_id', '=', 't_visit_queue_transfer.t_visit_id')
+                ->leftJoin('t_patient', 't_patient.patient_hn', '=', 't_visit_queue_transfer.visit_hn')
+                ->leftJoin('b_service_point', 'b_service_point.b_service_point_id', '=', 't_visit_queue_transfer.b_service_point_id')
+                ->where('t_visit_queue_transfer.b_service_point_id', '=', '240237368319191413')
+                ->orderBy('t_visit_queue_transfer.assign_date_time', 'asc')
+                ->get();
+        return view('monitor.c19', ['result'=>$result]);
+    }
 }
