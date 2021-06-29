@@ -27,6 +27,7 @@ class monitorController extends Controller
         $result = DB::table('t_visit_queue_transfer')
                 ->leftJoin('t_visit', 't_visit.t_visit_id', '=', 't_visit_queue_transfer.t_visit_id')
                 ->leftJoin('b_service_point', 'b_service_point.b_service_point_id', '=', 't_visit_queue_transfer.b_service_point_id')
+                ->leftJoin('f_emergency_status', 'f_emergency_status.f_emergency_status_id', '=', 't_visit.f_emergency_status_id')
                 ->where('t_visit_queue_transfer.b_service_point_id', '=', '2060761082126')
                 ->where('t_visit_queue_transfer.f_visit_type_id', '=', '0')
                 ->where('t_visit_queue_transfer.visit_queue_map_queue', '<>', '0')
@@ -35,12 +36,14 @@ class monitorController extends Controller
         $opd = DB::table('t_visit_queue_transfer')
                 ->leftJoin('t_visit', 't_visit.t_visit_id', '=', 't_visit_queue_transfer.t_visit_id')
                 ->leftJoin('b_service_point', 'b_service_point.b_service_point_id', '=', 't_visit_queue_transfer.b_service_point_id')
+                ->leftJoin('f_emergency_status', 'f_emergency_status.f_emergency_status_id', '=', 't_visit.f_emergency_status_id')
                 ->where('t_visit_queue_transfer.b_service_point_id', '=', '240237369467307452')
                 ->where('t_visit_queue_transfer.f_visit_type_id', '=', '0')
                 ->where('t_visit_queue_transfer.visit_queue_map_queue', '<>', '0')
                 ->orderBy('t_visit_queue_transfer.assign_date_time', 'asc')
                 ->get();
         return view('monitor.opd', ['result'=>$result,'opd'=>$opd]);
+        // return dd($result,$opd);
     }
 
     public function pcu()
