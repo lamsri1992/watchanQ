@@ -10,12 +10,12 @@
         <div class="text-right" style="padding-bottom: 1rem;">
             <button onClick="window.location.reload();" class="btn btn-warning btn-sm"><i class="fa fa-sync-alt"></i> Refresh</button>
         </div>
-        <div id="refresh">
+        <div id="liveQ">
             <table class="table table-striped table-sm table-dark" width="100%">
                 <thead class="thead-dark">
                     <tr>
                         <th class="text-center">CID</th>
-                        <th>ผู้ป่วย</th>
+                        <th>ผู้มารับบริการ</th>
                         <th class="text-center"><i class="far fa-clock"></i> เวลาถึงจุดรับบริการ</th>
                         <th class="text-center"><i class="far fa-play-circle"></i> ฟังก์ชั่นเรียกคิว</th>
                     </tr>
@@ -31,10 +31,18 @@
                         <td class="text-center">{{ $res->assign_date_time,11,10 }}</td>
                         @if ($res->b_service_point_id == '240237368319191413')
                         <td class="text-center">
-                            <button class="btn btn-sm btn-success" id="oval" role="button"
-                                onclick='responsiveVoice.speak("เชิญคุณ, {{ $pname }}, คุณ, {{ $pname }}, ที่จุดลงทะเบียน, ค่ะ","Thai Female",{rate: 0.9});'>
-                                <i class="fa fa-volume-up"></i> เรียกคิว
-                            </button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-volume-up"></i> เรียกคิว
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#" onclick='responsiveVoice.speak("เชิญคุณ, {{ $pname }}, คุณ, {{ $pname }}, ที่จุดลงทะเบียน, 1, ค่ะ","Thai Female",{rate: 0.9});'>จุดที่ 1</a>
+                                    <a class="dropdown-item" href="#" onclick='responsiveVoice.speak("เชิญคุณ, {{ $pname }}, คุณ, {{ $pname }}, ที่จุดลงทะเบียน, 2, ค่ะ","Thai Female",{rate: 0.9});'>จุดที่ 2</a>
+                                    <a class="dropdown-item" href="#" onclick='responsiveVoice.speak("เชิญคุณ, {{ $pname }}, คุณ, {{ $pname }}, ที่จุดลงทะเบียน, 3, ค่ะ","Thai Female",{rate: 0.9});'>จุดที่ 3</a>
+                                    <a class="dropdown-item" href="#" onclick='responsiveVoice.speak("เชิญคุณ, {{ $pname }}, คุณ, {{ $pname }}, ที่จุดลงทะเบียน, 4, ค่ะ","Thai Female",{rate: 0.9});'>จุดที่ 4</a>
+                                    <a class="dropdown-item" href="#" onclick='responsiveVoice.speak("เชิญคุณ, {{ $pname }}, คุณ, {{ $pname }}, ที่จุดลงทะเบียน, 5, ค่ะ","Thai Female",{rate: 0.9});'>จุดที่ 5</a>
+                                </div>
+                            </div>
                         </td>
                         @else
                         <td class="text-center">
@@ -64,6 +72,7 @@
     $(document).ready(function() {
         var refreshId = setInterval(function() {
             $('#liveQ').load(document.URL +  ' #liveQ');
+            // console.log('Reload Data');
         }, {{ $data_settime }});
     });
 </script>
