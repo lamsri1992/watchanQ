@@ -33,7 +33,7 @@
                         <td class="text-center">
                             <button class="btn btn-sm btn-success" id="oval" role="button"
                                 onclick='responsiveVoice.speak("เชิญคุณ, {{ $pname }}, คุณ, {{ $pname }}, ที่จุดลงทะเบียน, ค่ะ","Thai Female",{rate: 0.9});'>
-                                <i class="fa fa-volume-up"></i> เรียกผู้ป่วย 1
+                                <i class="fa fa-volume-up"></i> เรียกคิว
                             </button>
                         </td>
                         @else
