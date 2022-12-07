@@ -2,99 +2,103 @@
 @section('title',"EMERGENCY ROOM :: WATCHAN")
 @section('content')
 <style>
+    body {
+        background-image: url("img/FRAME-Q.png");
+    }
     .AutoScroll {
-        max-height: 540px;
+        max-height: 720px;
         overflow-y: scroll;
         overflow: hidden;
     }
     .tableFixHead thead th { 
         position: sticky;
-        top: 0; 
+        top: 0;
+        z-index: 10001 !important;
     }
     .blink-text {
         animation: blinker 3s linear infinite;
     }
     @keyframes blinker {
-    50% {
-        opacity: 0;
+        50% {
+            opacity: 0;
+        }
     }
-}
 </style>
-    @php
-        $data = count($result); $data_refresh = ($data * 3) * 1000;
-        if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refresh; }
-        // echo $data_settime;
-    @endphp
+@php
+$data = count($result); $data_refresh = ($data * 3) * 1000;
+if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refresh; }
+// echo $data_settime;
+@endphp
 <div class="row">
     <div class="col-md-12">
-        <div class="card-body text-center" style="background-color:#17a2b8;border-radius: 25px;">
-            <div id="liveQ">
-                <h1 class="card-title" style="font-size:45px;color:white;"><i class="fa fa-user-injured"></i>
-                    <strong>คิวรอตรวจห้องฉุกเฉิน</strong> : 
-                    <span class="badge badge-pill badge-danger" style="font-size: 40px;">{{ $data }}</span> คิว
-                </h1>
-                <div class="AutoScroll scroller tableFixHead" id="id-1" data-config='{"delay" : 5000 , "amount" : 100}'>
-                    <table class="table table-striped table-dark" width="100%" style="font-size:30px;">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th class="text-center">HN</th>
-                                <th>ผู้ป่วย</th>
-                                <th class="text-center"><i class="far fa-clock"></i> เวลา</th>
-                                <th class="text-center" width="25%"> สถานะ</th>
-                                <th class="text-center"> รายการ</th>
-                            </tr>
-                        </thead>
-                        <tbody style="font-size:35px;">
-                            @foreach($result as $res)
-                            @php
-                                if($res->f_emergency_status_id==0){$style='light';}
-                                else if ($res->f_emergency_status_id==1){$style='dark';}
-                                else if ($res->f_emergency_status_id==2){$style='warning';}
-                                else if ($res->f_emergency_status_id==3){$style='danger';}
-                                else if ($res->f_emergency_status_id==4){$style='danger';}
-                                else if ($res->f_emergency_status_id==5){$style='success';}
-                                else {$style='light';}
-                                $hn = (int)$res->visit_hn;
-                            @endphp
-                            <tr>
-                                <td class="text-center">{{ $hn }}</td>
-                                <td>{{ $res->patient_firstname }} {{ substr($res->patient_lastname,0,15)."*****" }}</td>
-                                <td class="text-center">{{ substr($res->assign_date_time,11,10) }}</td>
-                                <td class="text-center">
-                                    <span class="badge badge-{{ $style }} btn-block" style="font-size: 35px;">
-                                        {{ $res->emergency_status_description }}
-                                    </span>
-                                </td>
-                                <td class="text-center">
-                                    @if ($res->visit_queue_transfer_lab_status == 1)
-                                        <span class="" style="font-size: 35px;">
-                                            <i class="fa fa-flask text-success"></i> {{ "รอผลแลบ" }}
+        <div id="liveQ">
+            <div class="card-body" style="margin-top: -2rem;">
+                <div class="text-center">
+                    <h1 style="font-weight: bold; font-size: 65px;">
+                        <strong>คิวรอตรวจห้องฉุกเฉิน</strong>
+                        <span class="badge badge-pill badge-danger">
+                            {{ count($result) }} คน
+                        </span>
+                    </h1>
+                </div>
+                <div class="card-body" style="margin-top: 3.5rem;">
+                    <div class="AutoScroll scroller tableFixHead" id="id-1" data-config='{"delay" : 3000 , "amount" : 200}'>
+                        <table class="table table-striped table-borderless" width="100%" style="font-size:40px;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-center"><i class="far fa-clock"></i> เวลา</th>
+                                    <th class="text-center">HN</th>
+                                    <th>ผู้ป่วย</th>
+                                    <th class="text-center"> สถานะ</th>
+                                    <th class="text-center"> รายการ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($result as $res)
+                                @php
+                                    if($res->color == 0){$style='#28a745';}
+                                    else if ($res->color == 1){$style='#ffc107';}
+                                    else if ($res->color == 2){$style='#dc3545';}
+                                    else if ($res->color == 3){$style='#ff33e6';}
+                                    else if ($res->color == 4){$style='#6c757d';}
+                                    $hn = (int)$res->hn;
+                                @endphp
+                                <tr>
+                                    <td class="text-center">{{ $res->time }}</td>
+                                    <td class="text-center">{{ $hn }}</td>
+                                    <td>{{ $res->p_name." ".substr($res->l_name,0,15)."*****" }}</td>
+                                    <td class="text-center">
+                                        <span class="badge" style="background-color: {{ $style }};font-size: 35px;">
+                                            {{ $res->level }}
                                         </span>
-                                    @endif
-                                    @if ($res->f_emergency_status_id == 0 || $res->f_emergency_status_id == '')
-                                        <span class="" style="font-size: 35px;">
-                                            <i class="far fa-comment-dots text-warning"></i> {{ 'รอซักประวัติ' }}
+                                    </td>
+                                    <td class="text-center">
+                                        @if (isset($res->lab))
+                                            <span class="badge badge-primary" style="font-size: 35px;">
+                                                <i class="fa fa-flask"></i>
+                                                {{ "แลบ" }}
+                                            </span>
+                                        @endif
+                                        @if (isset($res->xr))
+                                        <span class="badge badge-warning" style="font-size: 35px;">
+                                            <i class="fa fa-x-ray"></i>
+                                            {{ "รังสี" }}
                                         </span>
-                                    @endif
-                                    @if ($res->visit_locking == 1)
-                                        <span class="" style="font-size: 35px;">
-                                            <i class="fas fa-stethoscope text-success"></i> {{ 'กำลังตรวจ' }}
-                                        </span>
-                                    @endif
-                                    @if ($res->b_service_point_id == '2402024154365')
-                                        <span class="" style="font-size: 35px;">
-                                            <i class="fa fa-procedures text-danger"></i> {{ "นอนดูอาการ" }}
-                                        </span>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="text-center blink-text" style="padding-top: 1%;">
-                <h1 class="badge badge-danger btn-block" style="font-size: 40px;"> หากรอคอยนานเกินกว่า 20 นาที ให้ติดต่อพยาบาลที่เค้าท์เตอร์</h1>
+        </div>
+        <div class="card-body">
+            <div class="text-center blink-text">
+                <div class="card-body">
+                    <h1 class="badge badge-danger btn-block" style="font-size: 35px;"> หากรอคอยนานเกินกว่า 20 นาที ให้ติดต่อพยาบาลที่เค้าท์เตอร์</h1>
+                </div>
             </div>
         </div>
     </div>

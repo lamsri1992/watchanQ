@@ -11,11 +11,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
     <style>
         body {
-            padding-top: 4.5rem;
+            padding-top: 1rem;
         }
     </style>
 <body>
-    @include('app.nav')
+    {{-- @include('app.nav') --}}
     <main role="main" class="flex-shrink-0">
         <div id="app">
             <div class="container-fluid">
