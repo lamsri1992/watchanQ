@@ -94,13 +94,16 @@ if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refres
                                         @if (isset($res->lab))
                                             <span class="badge badge-primary" style="font-size: 40px;font-weight: bold;">
                                                 <i class="fa fa-flask"></i>
-                                                {{ "แลบ" }}
                                             </span>
                                         @endif
                                         @if (isset($res->xr))
                                         <span class="badge badge-warning" style="font-size: 40px;font-weight: bold;">
                                             <i class="fa fa-x-ray"></i>
-                                            {{ "รังสี" }}
+                                        </span>
+                                        @endif
+                                        @if (isset($res->observe))
+                                        <span class="badge badge-dark" style="font-size: 40px;font-weight: bold;">
+                                            <i class="fa fa-bed"></i>
                                         </span>
                                         @endif
                                     </td>

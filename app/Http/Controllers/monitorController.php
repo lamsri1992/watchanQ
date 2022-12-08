@@ -10,10 +10,9 @@ class monitorController extends Controller
     public function er()
     {
         $result = DB::select("select distinct ovst.hn as hn,ovst.oqueue as queue,ovst.vstdate as date,ovst.vsttime as time,
-        CONCAT(patient.pname,patient.fname) as p_name,patient.lname as l_name,
-        pt_priority.`name` as `level`,pt_priority.id as color,ovstist.`name` as list,
-        lab_head.lab_order_number as lab,xray_head.xray_order_number as xr
-        
+        CONCAT(patient.pname,patient.fname) as p_name,patient.lname as l_name,pt_priority.`name` as `level`,
+        pt_priority.id as color,ovstist.`name` as list,lab_head.lab_order_number as lab,
+        xray_head.xray_order_number as xr,er_regist.observe as observe
         
         from ovst
         
