@@ -29,7 +29,7 @@ class monitorController extends Controller
         -- and ovst.ovstost = '063'
         group by ovst.hn
         order by ovst.vstdate,ovst.vsttime asc");
-        dd($result);
+        // dd($result);
         return view('monitor.er',['result' => $result]);
     }
     
