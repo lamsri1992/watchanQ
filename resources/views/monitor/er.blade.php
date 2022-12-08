@@ -63,7 +63,7 @@ if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refres
                                     else if ($res->color == 2){$style='#dc3545';}
                                     else if ($res->color == 3){$style='#ff33e6';}
                                     else if ($res->color == 4){$style='#6c757d';}
-                                    $cur_time = date('h:i:s');
+                                    $cur_time = date('H:i:s');
                                     $from_time = strtotime($res->time); 
                                     $to_time = strtotime($cur_time); 
                                     $diff_minutes = round(abs($from_time - $to_time) / 60). " นาที";
