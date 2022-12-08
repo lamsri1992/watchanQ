@@ -33,6 +33,7 @@
 <script src="{{ asset('vendor/autoscroll/autoscroll.js') }}"></script>
 <script src="https://code.responsivevoice.org/responsivevoice.js?key=ZiaVNNQm"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 @section('script')
 @show
 </head>

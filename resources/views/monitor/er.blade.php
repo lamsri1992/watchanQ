@@ -25,7 +25,7 @@
     }
 </style>
 @php
-$data = count($result); $data_refresh = ($data * 3) * 1000;
+$data = count($result); $data_refresh = ($data * 5) * 1000;
 if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refresh; }
 // echo $data_settime;
 @endphp
@@ -110,6 +110,18 @@ if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refres
     $(document).ready(function() {
         var refreshId = setInterval(function() {
             $('#liveQ').load(document.URL +  ' #liveQ');
+            $(function() {
+                var Toast = Swal.mixin({
+                    position: 'top-end',
+                    toast: true,
+                    showConfirmButton: false,
+                    timer: 3000,
+                });
+                    Toast.fire({
+                    icon: 'success',
+                    title: 'Auto Refresh {{ $data_settime }} ms '
+                })
+            });
         }, {{ $data_settime }});
     });
 </script>
