@@ -6,7 +6,7 @@
         background-image: url("img/FRAME-Q.png");
     }
     .AutoScroll {
-        max-height: 720px;
+        max-height: 600px;
         overflow-y: scroll;
         overflow: hidden;
     }
@@ -36,7 +36,7 @@ if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refres
                 <div class="text-center">
                     <h1 style="font-weight: bold; font-size: 65px;">
                         <strong>คิวรอตรวจห้องฉุกเฉิน</strong>
-                        <span class="badge badge-pill badge-danger">
+                        <span class="badge badge-pill badge-danger" style="font-size: 60px;">
                             {{ count($result) }} คน
                         </span>
                     </h1>
