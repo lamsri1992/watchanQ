@@ -24,12 +24,12 @@ class monitorController extends Controller
         left join lab_head on lab_head.vn = ovst.vn
         left join xray_head on xray_head.vn = ovst.vn
         
-        where ovst.vstdate = '2022-12-07'
+        where ovst.vstdate = '".date('Y-m-d')."'
         and ovst.cur_dep = '027'
         -- and ovst.ovstost = '063'
         group by ovst.hn
         order by ovst.vstdate,ovst.vsttime asc");
-        // dd($result);
+        dd($result);
         return view('monitor.er',['result' => $result]);
     }
     
