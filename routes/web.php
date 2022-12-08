@@ -13,4 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','monitorController@er')->name('monitor.er');
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::group(['/' => 'report'], function () {
+    Route::get('er','monitorController@er')->name('monitor.er');
+    Route::get('opd','monitorController@opd')->name('monitor.opd');
+});
