@@ -43,14 +43,16 @@ if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refres
                 </div>
                 <div class="card-body" style="margin-top: 3.5rem;">
                     <div class="AutoScroll scroller tableFixHead" id="id-1" data-config='{"delay" : 3000 , "amount" : 200}'>
-                        <table class="table table-striped table-borderless" width="100%" style="font-size:40px;">
+                        <table class="table" width="100%" style="font-size:40px;">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th class="text-center"><i class="far fa-clock"></i> เวลา</th>
-                                    <th class="text-center">HN</th>
-                                    <th>ผู้ป่วย</th>
-                                    <th class="text-center"> สถานะ</th>
-                                    <th class="text-center"> รายการ</th>
+                                    <th class="text-center">
+                                        <i class="fa fa-list-ol"></i>
+                                    </th>
+                                    <th>ชื่อ-สกุล</th>
+                                    <th class="text-center">เวลารอคอย</th>
+                                    <th class="text-center">ประเภท</th>
+                                    <th class="text-center">รายการ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,26 +63,42 @@ if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refres
                                     else if ($res->color == 2){$style='#dc3545';}
                                     else if ($res->color == 3){$style='#ff33e6';}
                                     else if ($res->color == 4){$style='#6c757d';}
-                                    $hn = (int)$res->hn;
+                                    $cur_time = date('h:i:s');
+                                    $from_time = strtotime($res->time); 
+                                    $to_time = strtotime($cur_time); 
+                                    $diff_minutes = round(abs($from_time - $to_time) / 60). " นาที";
                                 @endphp
-                                <tr>
-                                    <td class="text-center">{{ $res->time }}</td>
-                                    <td class="text-center">{{ $hn }}</td>
-                                    <td>{{ $res->p_name." ".substr($res->l_name,0,15)."*****" }}</td>
+                                <tr style="background-color: {{ $style }};">
                                     <td class="text-center">
-                                        <span class="badge" style="background-color: {{ $style }};font-size: 35px;">
-                                            {{ $res->level }}
+                                        <span class="badge badge-pill badge-light btn-block" style="font-size: 40px;">
+                                            {{ $res->queue }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span style="font-weight: bold;">
+                                            {{ $res->p_name." ".substr($res->l_name,0,15)."xxxxx" }}
+                                        </span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge badge-pill btn-block badge-secondary" style="font-size: 40px;font-weight: bold;">
+                                            <i class="far fa-clock"></i>
+                                            {{ $diff_minutes }}
+                                        </span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="" style="font-size: 40px;font-weight: bold;">
+                                            {{ $res->list }}
                                         </span>
                                     </td>
                                     <td class="text-center">
                                         @if (isset($res->lab))
-                                            <span class="badge badge-primary" style="font-size: 35px;">
+                                            <span class="badge badge-primary" style="font-size: 40px;font-weight: bold;">
                                                 <i class="fa fa-flask"></i>
                                                 {{ "แลบ" }}
                                             </span>
                                         @endif
                                         @if (isset($res->xr))
-                                        <span class="badge badge-warning" style="font-size: 35px;">
+                                        <span class="badge badge-warning" style="font-size: 40px;font-weight: bold;">
                                             <i class="fa fa-x-ray"></i>
                                             {{ "รังสี" }}
                                         </span>
@@ -97,7 +115,7 @@ if($data_refresh == 0){ $data_settime = 10000; }else{ $data_settime=$data_refres
         <div class="card-body">
             <div class="text-center blink-text">
                 <div class="card-body">
-                    <h1 class="badge badge-danger btn-block" style="font-size: 35px;"> หากรอคอยนานเกินกว่า 20 นาที ให้ติดต่อพยาบาลที่เค้าท์เตอร์</h1>
+                    <h1 class="badge badge-danger btn-block" style="font-size: 40px;"> หากรอคอยนานเกินกว่า 20 นาที ให้ติดต่อพยาบาลที่เค้าท์เตอร์</h1>
                 </div>
             </div>
         </div>
